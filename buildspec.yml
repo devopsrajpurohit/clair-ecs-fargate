@@ -11,6 +11,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo "Printing values of branch"
+      - echo ${SourceVariables.BranchName}
       - echo $Branch
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
